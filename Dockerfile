@@ -3,8 +3,7 @@ WORKDIR /work
 COPY . .
 RUN mvn clean package
 
-FROM openjdk 
+FROM tomcat
 WORKDIR /app
-COPY --from=0 /work/target/*.jar ./app.jar
-RUN ls -l /app
-CMD [ "java","-jar","app.jar" ]
+COPY --from=0 /work/target/*.war /usr/local/tomcat/webapps/
+
