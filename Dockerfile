@@ -5,5 +5,5 @@ RUN mvn clean package
 
 FROM openjdk 
 WORKDIR /app
-COPY target/*.jar ./
+COPY --from=builder /build/target/*.jar ./app.jar
 CMD [ "java","-jar","app.jar" ]
