@@ -1,6 +1,7 @@
 FROM maven
 WORKDIR /work
-COPY . .
+COPY pom.xml .
+COPY src ./src
 RUN mvn clean package
 
 FROM tomcat:10.1.46
