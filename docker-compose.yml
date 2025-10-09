@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  web-java:
+    image: muralisocial123/web-app-java:v1.1.0
+    container_name: web-app-java
+    ports:
+      - "8085:8080"
+    
+  flip-app:
+    image: muralisocial123/flipkart-app-web:v1.1.0
+    container_name: "flipkart-web"
+    ports:
+      - "82:80"
+
+  digital-app:
+    image: muralisocial123/digital-bank:1.1.0
+    container_name: digi-app
+    ports:
+      - "4546:4545"
+
+  cart-app:
+    image: muralisocial123/devsecops-cart:v1
+    container_name: cart-app
+    ports:
+      - "3001:3000"
+  
